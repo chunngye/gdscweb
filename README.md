@@ -1,1 +1,1 @@
-# gdscweb
+# Web Curriculum
