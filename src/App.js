@@ -5,7 +5,10 @@ import Navigation from './Layout/Navigation';
 import About from './Components/About';
 import Board from './Components/Board';
 import Home from './Components/Home';
+import MyBoard from './Components/MyBoard';
+import MyPage from './Components/MyBoard';
 import{Route, Routes} from 'react-router-dom';
+import Router from './Routes/Router';
 
 
 class App extends Component {
@@ -14,11 +17,13 @@ class App extends Component {
       <Layout>
         <Header />
         <Navigation />
-          <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/about" element={<About/>} />
-          <Route path="/board" element={<Board/>} />
-          </Routes>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/about" element={<About/>}/>
+          <Route path="/board" element={<Board/>}/>
+          <Route path="/myboard" element={<MyBoard/>}/>
+          <Route path="/mypage" element={<MyPage/>}/>
+        </Routes>
       </Layout>
     );
   }

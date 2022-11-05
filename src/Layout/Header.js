@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
     render() {
       return (
         <Container>
             <Element>
-                <ShortCut></ShortCut>
+                <ShortCut><Link to="/login">로그인/회원가입</Link></ShortCut>
                 <Search><h1>React Blog</h1></Search>
             </Element>
         </Container>
