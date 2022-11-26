@@ -1,39 +1,26 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import Header from './Layout/Header';
-import Navigation from './Layout/Navigation';
-import About from './Components/About';
-import Board from './Components/Board';
-import Home from './Components/Home';
-import MyBoard from './Components/MyBoard';
-import MyPage from './Components/MyBoard';
-import{Route, Routes} from 'react-router-dom';
-import Router from './Routes/Router';
+import './App.css';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import ListBoardComponent from './Components/ListBoardComponent';
+import HeaderComponent from './Components/HeaderComponent';
+import FooterComponent from './Components/FooterComponent';
+import CreateBoardComponent from './Components/CreateBoardComponent';
+import ReadBoardComponent from './Components/ReadBoardComponent';
 
 
-class App extends Component {
-  render() {
-    return (
-      <Layout>
-        <Header />
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/about" element={<About/>}/>
-          <Route path="/board" element={<Board/>}/>
-          <Route path="/myboard" element={<MyBoard/>}/>
-          <Route path="/mypage" element={<MyPage/>}/>
-        </Routes>
-      </Layout>
-    );
-  }
+
+function App() {
+  return (
+    <div>
+            <Router>
+             <Routes>
+              <Route path = "/" exact element = {<ListBoardComponent />}></Route>
+              <Route path = "/board" element = {<ListBoardComponent />}></Route>
+              <Route path = "/create-board/:no" element = {<CreateBoardComponent />}></Route>
+              <Route path = "/read-board/:no" element = {<ReadBoardComponent />}></Route>
+             </Routes>
+            </Router>
+    </div>
+  );
 }
-
-const Layout = styled.div`
-  margin: 0 auto;
-  display: flex;
-  width: 100%;
-  flex-flow: row wrap;
-`
 
 export default App;
